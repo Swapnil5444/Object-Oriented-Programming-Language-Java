@@ -1,0 +1,107 @@
+Has-a Relationship
+> when we declare reference of 1 type as member or attribute of other class it is has-a relationship
+> has-a relationship can be categorized into following 2 types
+ 1. containment(composition) -
+> when 2 objects are tightly associated with each other i.e. when we delete container object, contained object should also not exist. This relationship is composition e.g. Student contains Address
+ 2. aggregation - 
+> when 2 objects are loosely associated to each other i.e. when we delete container object, contained object should NOT be deleted. This relationship is aggregation e.g. Student associated with Teacher
+
+Static Import
+> this feature was added in JDK 1.5(5) 
+> it is used to import static method, static variable, outside the package and outside the class
+> this should be used only if 1 specific static member is being frequently used in the class 
+> unnecessary static imports can reduce the readability of the application(code)
+> Syntax is ad follows - 
+import static fully_Qualified_Class_Name.static_member_name
+> uses - junit method
+
+Array of References
+> when we declare array of class type, we actually create array of reference of that class type and not the actual object of that type
+Student[] students = new Student[2];
+
+Inner Class
+> A class which is defined inside other class is known as inner class
+> there are following types of inner classes
+ 1. Regular inner class -
+ 	> when a class is defined inside other class but outside method, without static modifier is known as Regular Inner Class
+ 	> regular inner class can access all the fields and methods of Outer class
+ 	> regular inner class can declare its own field also
+ 2. Method Local Inner Class -
+ 	> If a class is defined inside outer class method without static modifier is known as Method Local Inner Class 
+ 3. Static Inner Class
+ 	> when a class is defined inside other class but outside method, with static modifier is known as Static Inner Class
+
+Uses -
+> Used to create classes with high cohesion and hiding internal details
+> java's collection classes internally uses inner class
+> inner class files are created as follows
+Outerclassname-$-Innerclassname.class
+
+Syntax for method local inner class .class file is
+Outerclassname-$-digit-Innerclassname.class --digit(number of method)
+
+Interface
+> It is used to create loosely coupled application 
+> it is used to define the contract
+> implementing multiple inheritance 
+> syntax for declaring a interface 
+interface name{}
+Naming Convention
+> 1st letter of each word should be in Upper case 
+> interface name should end with 'able'.
+> by default every interface is abstract.
+> writing abstract keyword is optional
+> it is not recommended to write abstract keyword
+> object of interface cannot be created in other words interface cannot be instantiated 
+> but reference of an interface can be created 
+> since JDK 1.7 (7) , methods in a interface are by default abstract and public, writing 'abstract' keyword is optional
+> interface can contain variables which are by default public, static, final
+> class can implement 1 or more interface 
+> class is implementing an interface , it must override all the methods of that interface otherwise class has to be describe as abstract
+> an interface can extend another interface
+> Basic valid combinations
+class extends class
+class implements interface/s
+interface extends interface/s
+class extends class implements interface/s
+> JDK 8 features
+ 1. we can write implemented methods in interface which are known default methods
+ 2. it is not mandatory for the class to override default method
+ 3. an interface can define static methods
+> there is a special relationship between reference of an interface and object of a class implementing that interface that allows reference of an interface to refer to object of implementing class 
+
+Marker Interface
+> Interface having no methods declared is known as marker interface. It is also known as tagging interface. AKA Empty interface. e.g. Sirealizable
+> These interfaces are used as meta data provider which can be used by JVM, frameworks to perform some operation on classes implementing these interfaces 
+> e.g. Sirealizable - it is to save the object state in the file system
+
+Functional Interface
+> an interface containing exact 1 abstract method is known as functional interface 
+> this was introduced since JDK 8
+> such interface is used to declare lambda expression
+> lambda expression is introduced in JDK 8
+> lambda expression is an anonymous function 
+> it is strongly recommended to annotate any functional interface with @FunctionalInterdace
+> Syntax
+ FunctionalInterfaceName f = () -> {}
+
+interface Taxable{
+	double tax(double income){}
+}
+
+Taxable t = (double income) -> {return income*45.6;};
+
+public interface StringJoiner{
+	String join(String s1, String s2);
+}
+
+StringJoiner sj = (String s1, String s2) -> {return s1+s2;};
+
+> lambda expressions function signature must match with signature of functional interface method which is used to create lambda expression 
+NOTE: it is strongly recommended to write lambda expression in the most shorthand way possible using following rules.
+ 1. writing datatype to argument of lambda expression is optional
+ 2. If there is only 1 argument to lambda expression writing parenthesis is optional
+ 3. If there is only 1 statement in the body of lambda then writing curly brace is optional
+ 4. If lambda expression contains only 1 statement and we don't want to write curly braces and if that statement is return statement, then writing return keyword is NOT allowed.
+
+

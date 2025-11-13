@@ -1,0 +1,126 @@
+String Class
+> this frequently used class 
+> it is present in java.lang package
+> String is immutable - once the object is created its contents cannot be changed. Any attempt to change the content will create new String object and existing object would remain unchanged 
+> String object can be created with as well as without 'new' keyword. for e.g.
+String s1 = new String("a");
+String s2 = new String("a");
+System.out.println(s1.equals(s2)); //true - checks the contents
+System.out.println(s1 == s2); //false - checks the address/reference
+
+String s3 = "a";
+String s4 = "a";
+System.out.println(s3.equals(s4)); //true 
+System.out.println(s3 == s4); //true 
+
+> String objects with double quotes "" are stored on string constant pool. It is a special area reserved only for string object
+> the reason why java chose to make String immutable because String objects are cache in String pool
+> Never use String object if we know it's gonna be mutated frequently
+> If the frequent changes or updations is the requirement then String is not the right choice 
+
+StringBuffer
+> It is a class
+> it is present in java.lang package
+> StringBuffer is mutable
+> StingBuffer is thread-safe class, hence it is slow in performance
+
+StringBuilder
+> It is a class
+> it is present in java.lang package
+> StringBuilder is mutable
+> StringBuilder is NOT thread-safe class, hence it is better in performance as compared to StringBuffer
+> StringBuilder was added in JDK 5
+
+Abstract Method
+> Methods which are declared but not defined are abstract methods 
+> Syntax - public abstract return_type method_name();
+ 1. Method ends with a semicolon without curly brace
+ 2. add abstract modifier is used with the method
+> In java abstract method can be declared ONLY inside abstract class
+> Reference of abstract class CAN be created - AbstractClass obj; [ALLOWED]
+> Object of abstract class CANNOT be created - AbstractClass obj = new AbstractClass(); [NOT ALLOWED]
+> Abstract class can contain instance variable, instance method, constructor, static method, static variables etc
+> Abstract class constructors are executed when object of child is created.
+> The most generic class in the hierarchy is marked as abstract class.
+> If a class is extending abstract class it MUST override all the abstract methods of the abstract class otherwise the subclass MUST also has to be declared as abstract
+> Class with which object can be created is known as Concrete class (Non abstract classes are concrete class)
+> Class can be declared as abstract without having any abstract method
+>
+
+Reference Variable Casting
+> There are following 2 types of 
+ 1. Upcasting -
+    > tyring to assign sub-type reference to super-type.  
+    > Upcasting is implicit and safe.
+ 2. Downcasting -
+    > Tyring to assign reference of super-type to sub-type
+    > Downcasting must be done explicitly
+    > downcasting can be risky. 
+
+Package 
+> its a named collection of related classes, enums, interfaces
+> package is a directory
+> relation can be is-a , by purpose, has-a
+> java is set to be package centric language, meaning EACH and EVERY classes is defined in package
+> Naming Convention - 
+ 1. Each letter of the package should be in small case.
+ 2. package name should be in the reverse order of domain
+> for project studentmanagementpp, if the domain name is ycpait.ord --> then package name should be org.ycpait.studentmanagementpp
+> this package name is mapped to physical directory structure
+Steps to create a package
+ 1. 1st line in java code must be 'package' name of the package;
+
+> a class which needs to used outside the package MUST be imported.
+> By default every java file has 1 import statement available and that is 'import java.lang.*'
+USES
+> Package is used to organize the code
+> to avoid naming conflicts
+   Date - java.util
+   Date - java.sql
+> dao - data access object - responsible of interaction
+> each package should contain classes interfaces which are related to each other
+
+Wrapper Classes
+> Wrapper classes in Java provide a mechanism to convert primitive data types into objects.
+> for each primitive type java offers associated class known as wrapper class
+> these classes are used to perform following conversions-
+ 1. Primitive to Wrapper
+ 2. Wrapper to Primitive
+ 3. Primitive to String
+ 4. String to Primitive
+ 5. Wrapper to String
+ 6. String to Wrapper
+> all these wrapper classes are present in lang package
+Primitve         Wrapper-Class
+===============================
+byte            Byte
+short           Short
+int             Integer
+long            Long
+float           Float
+double          Double
+char            Character
+boolean         Boolean
+> when we deal with collections in java, collections can only store objects
+> if we see a horizontal line one a text in eclipse(IDE) it is deprecated
+> deprecated means this API is old one and not recommended to use, maybe removed from newer versions
+
+Auto-boxing/unboxing
+> auto-boxing is a process of implicit conversion from primitive to wrapper type
+> process of implicit conversion from wrapper to its primitive is known as auto-unboxing
+
+Demon Thread
+> Garbage collector is a demon thread
+> Demon thread is service thread
+> execution of garbage collector is completely under control of JVM
+> When will GC execute and for how long it runs is completely controlled by JVM
+> We cannot force JVM to run but we can request.
+> It is for sure, when needed, GC will run.
+> Reasons because of which object looses a references
+ 1. Reassigning reference to new object
+ 2. Assigning null value to reference
+ 3. Reference goes out of scope (e.g. when execution of a method gets over)
+
+Finalize Method
+> finalize method is automatically executed just before garbage collector collects the garbage object
+> finalize method is present in Object super-class which we must appropriately override. 
