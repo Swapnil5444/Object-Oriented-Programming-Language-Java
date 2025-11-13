@@ -1,0 +1,137 @@
+                                                                          DAY 1 NOTES
+> Java is a case sensitive language
+> Java is a statically typed language means compiler must know what type is gonna be used for the variable
+
+Identifier - user defined name given to variable, class, methods, constants etc
+
+> Java (or any programming language) is a combination of keywords and identifiers
+
+Rules for Identifiers
+1. a keyword cannot be identifier
+2. Identifier name cannot contain space, special characters
+3. identifier cannot start with a digit
+4. identifier can be combination of alphabets, digits, underscore(_), $
+5. identifier can be of any length
+
+Naming Conventions
+1. Class - 
+1st letter of the class name should be in upper case.
+if class consist of more than 1 word then 1st letter of each word should be in uppercase.
+   eg.HelloWorld
+Java class name should be a noun.
+
+2. variable - 
+variable name should be small and meaningful. 
+1st letter of 1st word should be in small case. 
+If variable consist of multiple words except 1st word, 1st letter of each word should be in upper case
+
+3. Methods - 
+method name should start with a verb e.g. display(), calculate(), accept(), print(). 
+Method name can also consist of verb followed by a noun e.g calculateSalary(), getName(), setId(). 
+1st letter of 1st word should be in small case.
+If method consist of multiple words except 1st word, 1st letter of each word should be in upper case
+
+
+
+>JRE uses JVM to RUN the java code the .class file
+
+>If you make source code change you must re-compile the source code
+
+>client machine only needs JRE on their machine to run the java code
+
+> .class file is only created only if there are no syntactical errors in the source code
+
+> System and String are both built-in classes offered by java
+
+
+> Variable is a named container in memory which can store a value and the value can be change(vary)
+> to declare a variable in java use following syntax
+data_type name_of_variable;
+java offers following 8 primitive data types , they are as follows
+
+(store whole numbers - e.g. RollNo)
+1. byte 
+2. short
+3. int
+4. long
+
+(store decimal values - e.g. Marks)
+5. float
+6. double
+
+(store any single character in single quotes - e.g. 'S')
+7. char
+
+(stores true or false)
+8. Boolean
+
+Type Casting
+long l = 24;
+int i = 12;
+i = (int)l; //Narrowing
+l = i       //widening (implicitly occurs)
+
+Methods
+> In java a method cannot be defined directly inside another method
+
+> method is execute only if it is invoked(called) 
+
+NOTE:- while writing classes follow
+1. Follow naming convention
+2. Indentation
+3. Comments if needed
+
+> java supports 3 types of comments 
+	1. single line comments - //
+	2. multi line comments - /* */
+	3. documentation comments - /** */
+
+
+
+Operators
+> operators are one which performs operation on operands
+1. Assignment Operators - used to assign a value to a variable e.g. a = 20
+2. Relational(comparison) Operators - e.g. < > <= >= != == - these always going to result into boolean values
+3. Arithmetic operators - [+, -, /, *, %]
+4. Logical operators - && (both conditions should be true), ||(atleast 1 conditions should be true), !(negates the condition)
+
+NOTE:- In java for any conditional expression value must result to Boolean types, if not, compilation error occurs
+
+Conditional Constructs
+> if we have just 1 statement in if block, else if block, else block, writing curly braces for these blocks is optional
+> switch cases are available since JDK 1.
+> it is not mandatory to write break after each case but execution of cases will happen till the time 1st break is encountered, this process is known as fall through and execution
+>Use case of switch case is menu driven application
+
+
+IDE(Integrated Development Environment) offers following features
+1. Indentation
+2. Auto-completion of code
+3. curly brace matching
+4. Colour highlighting
+5. The moment you save the source code, auto compilation happens
+
+these feature helps developer to write code quickly with less effort and time hence while working on real projects you'd prefer using IDEs.
+In java community following are few popular IDE's
+> eclipse
+> STS
+> intellij
+> netbeans
+
+LOOPS
+1. for loops - 
+>if there is only 1 statement in the loop then curly braces are optional
+> it is called Entry Control loop
+> minimum number of iterations in iterations is 0
+> for is used when we know number of iterations in advanced
+
+2. while loops - 
+>if there is only 1 statement in the loop then curly braces are optional
+> it is called Entry Control loop
+> minimum number of iterations in iterations is 0
+> while is used when we DON'T know number of iterations in advanced
+
+2. do while - 
+> it is called Exit Control loop
+> minimum number of iterations in iterations is 1
+> Do while is used to perform at least 1 iteration without checking condition
