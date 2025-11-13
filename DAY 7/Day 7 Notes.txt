@@ -1,0 +1,117 @@
+* Character Hierarchy:
+
+Reader ----> File Reader
+
+
+
+Writer ----> File Writer
+
+&nbsp;      ----> Print Writer
+
+
+
+* Byte Hierarchy:
+
+1. This hierarchy  is used for byte binary files. such as images,audio,videos.
+
+
+
+
+
+All the classes from IO package are good to use if we do not work with multiple threads as all methods are blocking call.
+
+We cannot perform high intensive read/write operations.
+
+To over come this drawback Java introduced set of new classes in completely new package known as java.nio.
+
+nio -> Non Blocking IO
+
+
+
+
+
+Collection Framework:-
+
+* It allows you to hold collection of data.
+* Drawbacks of arrays:
+
+&nbsp;	- Size of the array , it cannot grow or shrink dynamically.
+
+&nbsp;	- To insert new element, to remove existing element from array is very difficult \& time-consuming.
+
+&nbsp;	- Arrays can hold similar types of elements.
+
+
+
+Collections:-
+
+* Java offers implementation of data structure using collection frameworks.
+* collection -> Java's implementation of Data Structure.
+* All the classes \& interfaces are present in java.util package.
+
+
+
+Generics:-
+
+* It was introduced in JDK 5
+* It is strongly recommended to use collection classes with generics to make collection type safe.
+* Collection without generic is known as Raw Type.
+* Though it is allowed it is not recommended to use.
+
+
+
+
+
+Collections is a class 
+
+
+
+Collection without generics can create runtime issues. We must avoid it by trying to resolve these errors during compile time to do so we use generics.
+
+
+
+
+
+* Iterate using advanced for loop
+* Only for readonly operation from beginning to end sequentially
+* We cannot modify collection
+* If we want to iterate over collection object if you want to remove a specific element from the collection we should use Iterator object
+
+
+
+Iterator:-
+
+* Its an interface present in java.util package
+* This interface is implemented by respective collection class
+* Steps:-
+
+&nbsp;	- Obtain the Iterator Object by invoking iterator method.
+
+&nbsp;	- Write a loop to check if collection object has next element present in it by invoking hasNext 	  method of Iterator object.
+
+&nbsp;	- Get the next Element from collection by invoking next method of iterator object.
+
+&nbsp;	- Optionally we can remove a specific element from collection object by invoking remove method of 	  iterator object
+
+
+
+Comparable Interface:-
+
+* It is an interface
+* It is from java.lang package.
+* It has one abstract method in it public int compareto(args-1)
+* This interface is use to define natural sorting algorithm for a class
+
+
+
+Comparator:-
+
+* Using comparable we can provide only one sorting algorithm for any specific class.
+* But in real world you might want to sort object of a specific class on multiple different criteria.
+* Todo so Java offers built in interface known as Comparator.
+
+
+
+Java.util.Date Class:-
+
+* 

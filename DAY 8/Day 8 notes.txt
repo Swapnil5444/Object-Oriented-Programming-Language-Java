@@ -1,0 +1,96 @@
+Hash Code and Equals Methdos (hashCode() and equals()) -
+- Hash Code
+> any object which needs to be added in any collection class which uses Hashing techniques, MUST appropriately implement(override) hashCode() and equals() 
+> these two methods are of Object super class
+> Signature of hashCode() - public int hashCode(){}
+> Whichever class has Hash in the name will implicitly call hashCode()
+> hashCode gives us the right bucket where the object can be found
+> appropriate implementation of hashCode() is necessary to reduce number of comparisons so that performance will be improved
+- Equals
+> public boolean equals(Object o){}
+> objects to be used in, collection with hashing technique must appropriately override hashCode() and equals() methods of Object super-class
+
+Multi-Threading
+> ability to do multiple task simultaneously within a process
+> Thread - Smallest execution path within a process / independent path of execution within a process
+> it is used to improve the performance by minimizing idle time of CPU
+> Use case - for better user experience 
+> in gaming apps we use multithreading heavily
+> Java supports multi-threading by following two ways 
+ 1. by extending Thread class
+ 2. by implementing Runnable interface
+> both Thread class and Runnable interface are from java.lang package
+> Steps to use threads
+ 	1. create a class 
+	2. 'extends' in from Thread class or implements 'Runnable' interface
+	3. @Override run() method
+	4. create an object of Thread and invoke start() method
+> you should NEVER EVER call run method directly instead we should call start method which creates a separate thread of execution
+> by default each thread is assigned a name which we can retrieve by invoking getName() method
+> each thread is also assigned a priority, priority is a number ranging from 1 - 10. where 1 means min priority and 10 means max priority
+> priority is a way of giving prefernce for execution
+> we can get the priority by invoking getPriority() method
+> Execution of thread is completely under the control of JVM, which thread will execute and for how long is decided by JVM but every thread which is started will be executed for sure 
+> the process of switching between execution of threads is called Context Switching
+> JVM can decide to switch context from 1 thread to other 
+> each thread remembers its own context and resumes accordingly 
+> In java by default two threads are created main and garbage collector
+Uses:-
+> In web applications, nultiple request would be given by multiple clients , for each request a new thread is created by web container
+
+Race Condition
+> when multiple threads are trying to access shared resource at the same time, it leads to race condition which leads to data inconsistency
+> to avoid race condition we use the concept of synchronization 
+
+Synchronization
+> the idea of synchronization is each object in java has a lot associated with it and each lock has a key associated with it
+> when a thred is accessing the resource by invoking any method on that object that thread aquires the lock of the objecty which is said to be owner of the monitor
+> the lock is mutually exclusive , hence no other thread is allowed to access that resource at the same time
+> javas objects lock come into picture only if we have synchronizing methos
+> we apply lock to a resource by synchronizing methods using 'synchronized' keyword
+
+Inter Thread Communication
+> threads communicate with each other by using following 3 methods
+ 1. wait()
+ 2. notify()
+ 3. notifyAll()
+> these methods are present in Object super-class 
+> makes sure to call these methods on the object by a thread which is owner of the monitor otherwise an exception is generated
+> invoking wait() method moves the thread from running state to waiting() state 
+> invoking notify(), notifyAll() methods moves the thread from waiting state to ready to run state
+
+>wait() relases the lock and goes to wait s
+
+> goes to wait() state and
+< unlseesasn]]  y invoking notify() OR NOTFYOP 
+>if notificstion is not sent jn            eai
+> threads in waiting state wiukk remain in waiting state forev
+> mention notif() or notifyAll() appropp
+
+>sleep() method does not release the lock wait() releases the lock
+
+Thread Starvation
+> is the situation in which a thread with lower priority might never get chance to execute 
+> as a developer we must make sure to avoid this.
+> to avoid this we use yield() methods.
+
+> call to start method of a thread creates a separate call
+> the moment the execution of run is over , the call stack is over the call stack is destroyed means thread is dead
+> 50 threads is maximum is required
+
+
+Imperative Programming
+> Imperative Style of Programming in this a programmer(developer) needs to implement step by step process to get the result
+> in other words developer is focusing on what he wants and how it is to be done 
+
+Declarative Programming
+> Declarative Programming is in which developer only DECLARES what he wants and does not implement how e.g. SQL
+> to implement declarative style of programming we use lambda expressions in java 
+
+
+java.util.function			
+Name	      Argument	return	Method
+Predicate<T>	Y	Boolean	test()
+Function<I,O>	Y	Y (O)	apply()
+Supplier<T>	N	Y (T)	get()
+Consumer<T>	Y	N	accept()

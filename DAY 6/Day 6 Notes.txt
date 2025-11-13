@@ -1,0 +1,92 @@
+Exception Handling
+> any abnormality due to which program terminates abruptly without intimating or without informing user of the system.
+> if we don't want systems to crash abruptly we must handle the exception 
+> to do so, Java offers following 5 keywords:- 
+ 1. try - 
+	> try is a block  
+	> written inside a method
+	> it is used to write doubtful statements (statements which might generate exceptions)
+	> 
+ 2. catch -
+	> it is a block
+	> written inside a method
+	> it is used to handle the exception
+ 3. finally -
+	> it is a block
+	> written inside a method
+	> statements which must be executed irrespective of whether exception was generated or not , we must use finally block
+	> e.g. closing the resources
+	> it is used to avoid resource leakage issues. example of resource - Database connection
+ 4. throw -
+	> throw keyword is used to throw an exception programmatically 
+	> useful in case of user defined exceptions 
+ 5. throws -
+	> it is used to declare that method might throw an exception 
+	> hence calling method must either handle or declare to be handled 
+	> throws is used to propagate the exception .
+> exception handling in java is object oriented hence java offers class for each type of exceptions.
+> you must always have specific catch block 1st and then you must have a generic catch block.
+> Each exception in java is direct or indirect sub-class of Exception class.
+> Every exception is a subclass of Exception class.
+
+1. Unchecked Exception
+ > any exception which is sub-type of RuntimeException is known as Unchecked Exception
+ > e.g. NullPointerException
+ > Such exceptions are not forced to handle or declared by Java compiler 
+2. Checked Exception
+ > any exception which is not subclass of RuntimeException
+ > e.g. IOException, SQLException, ClassNotFoundException
+ > such exceptions are forced to handle or declared by Java compiler
+
+Exception Flow
+> as soon as an exception is generated in try block , control is transferred from try block to 1st matching catch block
+> no statement in the try block are executed after the statement which generated the exception
+> when an exception is generated , an object of that type is created by JVM and it is thrown which we must catch
+> java offers a generic exception class as Exception which is a parent Exception of all other
+> Generic catch must always be written as the last catch block
+
+
+User Defined Exceptions
+> these are custom exceptions based on custom business logic 
+> a developer needs to create user defined exception classes 
+> steps to create
+ 1. create a class
+ 2. extends it from Exception class.
+ 3. for Checked Exception extends it from Exception
+ 4. for Unchecked Exception extends it from RuntimeException
+
+FileIO
+> storing data in primary memory would delete it after the execution of application 
+> almost all real world applications would want to store data permanently 
+> to do so we have to store data in secondary storage in the form of files
+> java allows to deal with files by offering lot of built in classes which are present in java.io package 
+> java offers 2 different hierarchies 1. for reading from the file and 2. writing into the file
+Steps to write IO files
+ 1. identify the operation you want to perform, based on the operation choose the appropriate class
+ 2. Create an object of that class, while creating object associate file with this object by passing name of the file in the constructor 
+ 3. Invoke either read method or write method 
+ 4. close the resources (write in finally)
+
+> when we are trying to read a file using input stream, java expects that file must be in existence otherwise FileNotFoundException is thrown
+> when we are trying to write into the file using file output stream and if file is not in existence a blank new file would be created.
+> when you are trying to write into the file using output stream and if file exist with data a blank new file is created.
+> be very very careful when opening a file using FileOutputStream
+
+Serializtion
+> serialization is the process in which the state of the object is converted into byte stream so that it can be saved into file system or it can be pass over the network.
+> this will be useful in case of distributed application 
+> Steps
+ 1. the object we want to serialize that class must implement Serializeable interface
+ 2. create an object of FileOutputStream and associate it with the file.
+ 3. create an object of ObjectOutputStream associate it with FileOutputStream object by passing in the constructor
+ 4. invoke writeObject() of ObjectOutputStream class, to that method pass an object of a class which we want to serialize. 
+ 5. close the resources.
+
+Deserialization
+> its the process of converting byte stream into object form
+> steps for deserialization
+ 1. the object we want to deserialize that class must implement Serializeable interface
+ 2. create an object of FileInputStream and associate it with the file.
+ 3. create an object ObjectInputStream and associate it with FileInputStream object
+ 4. invoke readObject() and type cast to appropriate reference type.
+ 5. close the resources.
