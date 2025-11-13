@@ -1,0 +1,60 @@
+Stream API
+> it was introduced in JDK 8
+> stream is used to process collection of data
+> streams don't change existing collection 
+> stream is present in java.util.stream package
+> streams are evaluated lazily
+> once a stream is used(consumed) cannot be reused again any attempts to do so generates an exception.
+> Steps to use Stream
+ 1. create stream from source by invoking stream methods of the source. Source can be collection, array, stream
+ 2. invoke 1 or many intermediate operations based on business requirement 
+ 3. invoke a terminal operation and get the result
+
+Intermediate Operation
+> Any operations that returns stream is known as Intermediate Operation
+> e.g. streamReference.filter(), streamReference.map() - Filter operation , map operations
+
+Terminal Operation
+> any operations that returns final result (other than stream) is known as Terminal Operation
+> e.g. toList();
+
+Reflection
+> reflection is the process of inspecting, finding information about class, method, field
+> this is typically done in following use cases 
+ 1. tool provider - e.g. Eclipse IDE 
+ 2. frameworks - e.g. Spring, Hibernate
+ 3. Annotation Processing
+> there is a special class offered by Java known as Class which is in lang package which offers different methods to find information about a class. like fields, methods etc
+> invoke getClass() method on object of any class whose information we want to find.
+> reflection api is present is java.lang.package
+> use reflection only when needed, unnecessary usage of reflection must be strictly avoided.
+
+DAO (Data Access Object)
+> it is a design pattern used to interact with data storage from java application
+> data storage can be in memory, file system, database.
+> We implement this pattern by writing java class responsible for CRUD operation
+> for each entity we write separate DAO class
+> naming convention for DAO class is -  EntityNameDaoImpl.java - e.g. StudentDaoImpl.java
+> DAO class should be in its own package
+
+Intermediate Operation - filter(), map()
+Terminal Operation - toList(), findFirst(), forEach()
+
+
+Rules for Java Files
+> it can contain 0 or 1 package statement, if present, it must be the first statement
+> after package statement we can have 0 or many import statements
+> followed by class definition, interface definition , enum definition
+> a java file can contain only 1 public class/interface/Enum
+> but any number of non-public classes/interfaces/enums can be present
+> comments can appear anywhere
+
+Object Methods
+clone() - 
+> this is method of object super-class
+> it allows us to create clone of existing object.
+> the object that needs to be cloned must implements Cloneable interface
+> Cloneable interface is from java.lang package
+> Cloneable is a marker interface
+> Cloneable helps you to create shallow copying
+> deep copying must be explicitly done by developer of the class
