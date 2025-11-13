@@ -1,0 +1,85 @@
+Local Variables
+> Variables which are declared inside a method or block are known as local variables e.g. Block means for loop, while loop, methods
+> lifetime and scope of such variables is limited to the block or method in which they are declared
+> any variable argument in a method is also a local variable e.g. main(String[] args)
+> local Variables MUST be initialized before accessing
+
+> When a problem statement is given to you as an Object oriented developer we must identify important business entities
+> Entity is a real world thing that has well defined structure and behaviour 
+> Represent those entities in java by defining classes and creating their objects
+> Classes are blueprint/ template of a real world entity
+> Objects are instance of that class
+
+Instance Variables
+> Variable declared a class but outside any method or block without static modifier is known as instance variable 
+> Default value to instance variable is assigned, based on the datatype 
+
+Cohesion
+> it is degree to which a class has 1 single focused responsibility 
+> ALL java classes must be Highly Cohesive Class
+> Benefits of Highly Cohesive Classes are 
+ 1. Such Classes are reusable
+ 2. Maintainable - easy to maintain 
+
+
+> In Java objects are created using new keyword
+> Objects in java are always created on HEAP memory
+> To access an object in HEAP we need to have a reference in STACK
+
+This Reference
+> this is a reference to current invoking object
+> this reference is implicitly passed to each instance method of a class
+	void display() {
+		System.out.println(rollNumber); //this line is equivalent to this.rollNumber, compiler does that implicitly. It is recommended to use explicitly this reference inside instance method. It makes code readable
+		System.out.println(this.name);
+		System.out.println(this.marks);
+	}
+
+
+Access Specifiers
+> java offers following 3 access specifiers but 4 access level controls
+ 1. public - accessible from anywhere 
+ 2. private - accessible only within the same class in which it is declared
+ 3. protected - accessible within same package to any class and outside the package only to sub-classes via inheritance
+ 4. Default(Access level control) - It is accessible only within same package
+
+
+> each object has it's own copy of instance variables 
+
+
+Constructors
+> it is a special method automatically executed when object is created
+> it has NO return type.
+> it is used to initialized instance variables 
+> it has same name as the class name
+> constructors can be defined with any access specifier
+> a constructor without any argument is known as NO argument constructor
+> Constructor can accept parameters knowns parameterized constructor
+> Keep number of arguments in parameterized constructor same as number of attributes.
+> A class having no-argument constructor and parameterized constructor is known as constructor overloading
+> Overloading is possible 
+ 1. If number of arguments are different
+ 2. and/or datatype of argument is different
+ 3. sequence of argument is different
+
+
+Method Overloading
+> if we defined more than 1 method in same class with same name but different signature it is known as method overloading
+> method signature consist of number of argurment. datatypes of arguments, sequence of arguments
+
+
+====Static 
+Variable
+> A variable declared inside class but outside any method or block with static modifier is known as static variable.
+> Only 1 copy of static variable is created irrespective of number of objects of a class.
+> We can apply any access modifier to static variable 
+> static variable is assigned default value based on the datatype 
+
+Methods
+> methods can also be marked using static modifier
+> static variables , methods are independent of object hence it can be directly accessed using class name
+> e.g. System.out.println(); --- System is a class which is directly letting us access member 'out' which is static so that we don't have to create an object
+> public static void main(String[] args) --- main is static so that JVM can call main without having to create any object
+
+
+> In java you can declare multiple variables with same name provided their scopes are different

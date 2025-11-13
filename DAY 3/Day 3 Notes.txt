@@ -1,0 +1,95 @@
+> Array is a collection of homogenous items 
+> stored in consecutive memory location
+> arrays in java are objects, hence they are created on heap memory
+> steps to create an array
+ 1. declare array type with its reference e.g. int[] numbers
+ 2. create an object and assign it to reference -- numbers = new int[3];
+ 3. assign values to array elements
+ 4. array index starts with 0
+ 5. If size of the array once declared it is fixed 
+
+
+Enhanced for loop
+> when we want to iterate over arrays, collection sequentially from beginning to end use enhanced for loop. This was added in JDK 1.5 (AKA JDK 5)
+> syntax is as follows
+for(data_type variable : array_name){}
+
+
+final Keyword
+> if used with a variable , value of that variable cannot be changed.
+> in other words it used to declare a constant
+> if a used with a method that method cannot be overridden
+> if used with a class, that class cannot be inherited
+
+Enums (Enumeration)
+> When we want user to pick a value from given enumerated list, we use enums
+> enums were added in JDK 1.5 (AKA JDK 5)
+> example of enums should be gender
+> Syntax to declare Enum is
+enum Enum_name {
+	constants separated by ,
+}
+> enum constants are by default static and constants.
+
+------SETTER and GETTER
+Setter Method
+> this method is used to change value of a specific attribute or field
+> setter should be public 
+> return type should be void
+> method name should start with 'set' followed name of the attribute where first letter should be in upper case
+> method should accept an argument of same type as the attribute type
+
+Getter Method
+> this method is used to get a value of a specific attribute 
+> getter method should be public
+> should have return type matching to attribute type 
+> method name should start with 'get' followed by name of the attribute where first letter should be in upper case
+> method should not accept any argument
+> method should return value of attribute
+
+> it is a convention and best practice to write setter getter method for private field and private attribute of a class
+> these setter getter are used typically by frameworks such as spring, hibernate, 
+
+
+Convention for Class Members
+class{
+	//attributes
+	//constructors
+	//setter, getter
+	//methods
+}
+
+
+Inheritance
+> Inheritance is a major pillar of OOP paradigm
+> using inheritance we implement is-a relationship
+> in other words when we have is-a relationship we use inheritance to implement it 
+> in java inheritance is implemented using 'extends' keyword 
+> inheritance allows us to create new class by inheriting properties of existing class
+> existing class is known as Base-class, super-class, parent-class and new class is known as the sub-class, derived-class, child-class
+> benefits - code reusability, polymorphism
+> base class contains common properties and methods
+> When we create and object of sub-class constructors are executed from top to bottom in hierarchy (parent to child)
+> 1st statement in child class constructor is called to super()
+> by default call to super() is called to no argument constructor of super class. If no argument constructor in super class is not present, compilation error occurs.
+> child inherits a properties from parent in addition to that child can declare its own specific property
+> superclass has no idea about child specific properties
+> inheritance allows us to create an hierarchy where top most super-class is the most generalized class and the bottom most sub-class is the most specialized class.
+
+Method Overriding
+> if we want to change implementation of base class method in child class we use method overriding 
+> Rules for Method Overriding
+ 1. Method name must be same
+ 2. Method signature must be same
+ 3. Access specifier cannot be more restrictive 
+> Cannot add new broader checked exceptions in throws clause
+> Method overriding gives us dynamic polymorphism also known as runtime polymorphism
+> In java by default selection of method for execution happens at runtime based on type of object created
+> Every class in java is extending Object class if not explicitly extending any other class 
+> which means every class in java is directly or indirectly sub-class of object 
+> java does not support multiple inheritance using class extends
+
+toString Method
+> each class should override toString() method 
+> it is used to return useful information 
+> this method is present in object superclass 
